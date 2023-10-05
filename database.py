@@ -16,5 +16,6 @@ class Database:
     def balance(self, acct_id):
         acct = self.data.get(acct_id)
         if acct:
-            return int(acct["due"]) - int(acct["paid"])
+            bal = float(acct["due"]) - float(acct["paid"])
+            return f"$ {bal:.2f}"
         return None
